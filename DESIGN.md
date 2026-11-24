@@ -2,7 +2,7 @@
 
 ## Existing work
 
-The upstream tracker had four open submissions covering the full bounty at review time and several staged submissions. A useful next code change would target a specific gap in the candidate maintainers choose and preserve that candidate's consensus behavior.
+The [upstream audit](AUDIT.md) covers the full and staged submissions and compares their execution paths. The design below records choices for a programmable-payments system. The candidate PRs make different choices about routing atomicity, trigger ordering, fees and period boundaries.
 
 | Candidate | Execution model | Distinction |
 | --- | --- | --- |
@@ -35,4 +35,4 @@ Verify rule outputs against the authorized recipient set and aggregate caps. Com
 
 ## Verification boundaries
 
-The measured tests cover unsigned period and authorization logic, fee and routing arithmetic, scripted payout outputs, and a local Alice/Bob block-apply run for PR #128. Absolute expiry and periods were exercised in that run. Relative holds, inactivity expiry, native Tau execution and the signed multi-node path were outside that run. See the [README](README.md) for exact revisions, commands and results.
+The [README](README.md) records the earlier block-apply run and selected unit tests. The [upstream audit](AUDIT.md) records key-free native Tau tests of rule evaluation and settlement, plus upstream evidence for the signed two-node grant flow.

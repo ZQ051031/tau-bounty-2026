@@ -1,6 +1,6 @@
 # Tau Bounty #01 — Programmable payments
 
-Independent review and verification for Tau's programmable-payments bounty. The implementation candidates are open pull requests in [IDNI/tau-testnet](https://github.com/IDNI/tau-testnet). This repository holds design notes and reproduction instructions. The session's GitHub integration denied the fork request, and the open candidates already provide overlapping implementations.
+Independent review and verification for Tau's programmable-payments bounty. The upstream PRs collectively implement the requested payment behaviors, including the 5,000-unit Alice/Bob example. Their consensus semantics differ, and the maintainers require design approval before implementation. The [upstream audit](AUDIT.md) maps the code and test evidence, shows where the implementations differ, and explains why this review produced no new implementation PR. The [user's Tau fork](https://github.com/ZQ051031/tau-testnet) was cloned for the review.
 
 ## Scope
 
@@ -44,7 +44,7 @@ python -m pytest -q tests/test_periods.py tests/test_sweep.py
 | [#146](https://github.com/IDNI/tau-testnet/pull/146) | Periods, grants, payout caps and atomicity, receive routes and standing payments | 45 | 0 | 0 |
 | [#167](https://github.com/IDNI/tau-testnet/pull/167) | Calendar periods and deterministic sweep | 18 | 0 | 0 |
 
-The first attempt with repository fixtures stopped because `multiaddr` was missing. The final runs used the dependency list above and loaded the repository fixtures. Payout unit tests use a callable to supply rule outputs. Native Tau, signed node integration, the public testnet and the full upstream suite remain unverified in this review.
+The first attempt with repository fixtures stopped because `multiaddr` was missing. The final runs used the dependency list above and loaded the repository fixtures. Payout unit tests use a callable to supply rule outputs. The [upstream audit](AUDIT.md) records the subsequent native Tau runs, the signed two-node CI evidence, and the verification limits.
 
 ## Alice and Bob
 
